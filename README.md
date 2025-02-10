@@ -18,8 +18,8 @@ This Agisoft Metashape Pro python script will automatically import masks on sele
 This python script will adjust the pitch, roll, yaw angles defined by user input<br><br>
 <b>Metashape/lidarPano2reference.py</b><br>
 This python script will export lidar panorama positions to a reference file<br><br>
-<b>Metashape/adjustReference.py</b><br>
-This python script will adjust the pitch, roll, yaw angles defined by user input.<br>
+<b>Metashape/optimizeCameras4D.py</b><br>
+This python script for Agisoft Metashape Pro will optimize cameras for 4D capture setups.<br>
 <hr>
 <b>Point Clouds/ply2colmap.py</b><br>
 This python script will convert an ascii ply point cloud to a colmap compatible point cloud format.
