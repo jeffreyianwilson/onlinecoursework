@@ -4,18 +4,8 @@
 import sys
 import numpy as np
 
-# Define functions for reading PLY and writing COLMAP points3D
-
+# Reads an ASCII PLY file and extracts the point cloud data.
 def read_ply_ascii(file_path):
-    """
-    Reads an ASCII PLY file and extracts the point cloud data.
-
-    Args:
-        file_path (str): Path to the PLY file.
-
-    Returns:
-        points (np.ndarray): Array of shape (N, 6) or (N, 3) containing point cloud data.
-    """
     with open(file_path, 'r') as file:
         header = []
         while True:
@@ -37,14 +27,9 @@ def read_ply_ascii(file_path):
         else:
             return data[:, :3]  # x, y, z
 
+# Writes a COLMAP-compatible points3D.txt file.
 def write_colmap_points(points, output_path):
-    """
-    Writes a COLMAP-compatible points3D.txt file.
-
-    Args:
-        points (np.ndarray): Array of shape (N, 6) or (N, 3).
-        output_path (str): Path to the output points3D.txt file.
-    """
+    
     with open(output_path, 'w') as file:
         for i, point in enumerate(points):
             x, y, z = point[:3]
@@ -52,15 +37,8 @@ def write_colmap_points(points, output_path):
             track_id = -1  # No track info available
             file.write(f"{i + 1} {x:.6f} {y:.6f} {z:.6f} {r} {g} {b} {track_id}\n")
 
-# Main conversion function
+# Converts a PLY file to COLMAP points3D.txt format
 def convert_ply_to_colmap(ply_path, colmap_path):
-    """
-    Converts a PLY file to COLMAP points3D.txt format.
-
-    Args:
-        ply_path (str): Path to the input PLY file.
-        colmap_path (str): Path to the output points3D.txt file.
-    """
     points = read_ply_ascii(ply_path)
     write_colmap_points(points, colmap_path)
 
