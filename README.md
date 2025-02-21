@@ -16,8 +16,8 @@ This Agisoft Metashape Pro python script will automatically align, filter tie po
 This Agisoft Metashape Pro python script will automatically import masks on selected images for a multi-camera rig if subdirectory structure is the same.<br><br>
 <b>Metashape/adjustReference.py</b><br>
 This python script will adjust the pitch, roll, yaw angles defined by user input<br><br>
-<b>Metashape/lidarPano2reference.py</b><br>
-This python script will export lidar panorama positions to a reference file<br><br>
+<b>Metashape/camera2reference.py</b><br>
+This python script will create a reference for camera positions file<br><br>
 <b>Metashape/optimizeCameras4D.py</b><br>
 This python script for Agisoft Metashape Pro will optimize cameras for 4D capture setups.<br>
 <hr>
