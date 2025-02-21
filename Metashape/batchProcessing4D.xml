@@ -47,7 +47,17 @@
     <reuse_depth>true</reuse_depth>
     <vertex_colors>false</vertex_colors>
   </job>
+  <job name="DecimateModel" target="all">
+    <face_count>5000000</face_count>
+    <replace_asset>true</replace_asset>
+  </job>
   <job name="BuildTexture" target="all">
     <page_count>2</page_count>
+  </job>
+  <job name="ExportModel" target="all">
+    <format>1</format>
+    <path>C:/Temp/xAngle/myriam/headScans/export/headScan.obj</path>
+    <save_colors>false</save_colors>
+    <save_udim>true</save_udim>
   </job>
 </batchjobs>
