@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<batchjobs version="2.2.0" save_project="true">
+  <job name="RunScript" target="all">
+    <args>C:\\Temp\\xAngle\\myriam\\reference.csv</args>
+    <path>D:/OneDrive/3D Scanning Masterclass/97 - Scan Capture and Processing/98 - Github Code/Metashape/importReference.py</path>
+  </job>
+  <job name="AlignPhotos" target="all">
+    <keep_keypoints>true</keep_keypoints>
+    <mask_tiepoints>false</mask_tiepoints>
+    <tiepoint_limit>10000</tiepoint_limit>
+  </job>
+  <job name="RunScript" target="all">
+    <args>C:\\Temp\\xAngle\\myriam\\region.csv</args>
+    <path>D:/OneDrive/3D Scanning Masterclass/97 - Scan Capture and Processing/98 - Github Code/Metashape/regionImport.py</path>
+  </job>
+  <job name="BuildModel" target="all">
+    <face_count>2</face_count>
+    <reuse_depth>true</reuse_depth>
+    <vertex_colors>false</vertex_colors>
+  </job>
+  <job name="GenerateMasks" target="all">
+    <blur_threshold>1</blur_threshold>
+    <depth_threshold>10</depth_threshold>
+    <masking_mode>3</masking_mode>
+    <tolerance>0</tolerance>
+  </job>
+  <job name="AlignPhotos" target="all">
+    <downscale>0</downscale>
+    <filter_mask>true</filter_mask>
+    <keep_keypoints>true</keep_keypoints>
+    <keypoint_limit>80000</keypoint_limit>
+    <mask_tiepoints>false</mask_tiepoints>
+    <reset_alignment>true</reset_alignment>
+    <reset_matches>true</reset_matches>
+    <tiepoint_limit>20000</tiepoint_limit>
+  </job>
+  <job name="RunScript" target="all">
+    <args>.5 50 1 15</args>
+    <path>D:/OneDrive/3D Scanning Masterclass/97 - Scan Capture and Processing/98 - Github Code/Metashape/optimizeCameras4D.py</path>
+  </job>
+  <job name="RunScript" target="all">
+    <args>C:\\Temp\\xAngle\\myriam\\reference.csv</args>
+    <path>D:/OneDrive/3D Scanning Masterclass/97 - Scan Capture and Processing/98 - Github Code/Metashape/regionImport.py</path>
+  </job>
+  <job name="BuildModel" target="all">
+    <downscale>2</downscale>
+    <reuse_depth>true</reuse_depth>
+    <vertex_colors>false</vertex_colors>
+  </job>
+  <job name="BuildTexture" target="all">
+    <page_count>2</page_count>
+  </job>
+</batchjobs>
