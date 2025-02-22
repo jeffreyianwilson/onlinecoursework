@@ -7,11 +7,13 @@ doc = Metashape.app.document
 chunk = doc.chunk
 
 # Variables
-referencePath = str(sys.argv[1]) #"C:\\Temp\\xAngle\\myriam\\reference.csv"
+locationAccuracy = float(sys.argv[1])
+rotationAccuracy = float(sys.argv[2])
+referencePath = str(sys.argv[3]) # "C:\\Temp\\xAngle\\myriam\\reference.csv"
 
 # Import Camera Reference
-chunk.importReference(path = referencePath, format = Metashape.ReferenceFormatCSV, skip_rows=1, columns="nxyz", delimiter=",")
+chunk.importReference(path = referencePath, format = Metashape.ReferenceFormatCSV, skip_rows=2, columns="nxyzabc", delimiter=",")
 for camera in chunk.cameras:
-    camera.reference.location_accuracy = Metashape.Vector([0.01,0.01,0.01])
-    #camera.reference.rotation_accuracy = Metashape.Vector([0.1,0.1,0.1])
+    camera.reference.location_accuracy = Metashape.Vector([locationAccuracy,locationAccuracy,locationAccuracy])
+    camera.reference.rotation_accuracy = Metashape.Vector([rotationAccuracy,rotationAccuracy,rotationAccuracy ])
 chunk.updateTransform()
