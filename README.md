@@ -1,5 +1,5 @@
-# 3D Scanning Masterclass
-A collection of python scripts for processing data for the 3D Scanning Masterclass.<br>
+# JeffreyIanWilson.com Online Coursework
+A collection of python scripts for processing data for the online coursework.<br>
 <hr>
 <b>Image Processing/exif2csv.py</b><br>
 Python script to parse image exif metadata and compute exposure values into a CSV file then plot the exposure over time in a graph.<br><br>
