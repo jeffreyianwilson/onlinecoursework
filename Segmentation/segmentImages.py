@@ -1,4 +1,4 @@
-# This Agisoft Metashape Pro python script will automatically import masks on selected images for a multi-camera rig if subdirectory structure is the same.
+# This script segments images using a pre-trained YOLO model and saves binary masks for specified classes.
 # By Jeffrey Ian Wilson for the 3D Scanning Masterclass (www.jeffreyianwilson.com)
 
 from ultralytics import YOLO
